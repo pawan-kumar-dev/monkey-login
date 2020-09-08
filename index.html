@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Login</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(100deg,rgb(169, 250, 169),rgb(152, 152, 241));
+            width: 100%;
+            height: 100vh;
+        }
+        header{
+            width: 100%;
+            height: 100vh;
+        }
+        nav{
+            padding: 1rem 0;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            background-color: springgreen;
+            font-weight: 700;
+            color: rgb(153, 0, 255);
+        }
+        .mainContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 90%;
+        }
+        .login{
+            padding: 1rem;
+            background-color: white;
+            border: 2px solid snow;
+            border-radius: 20px;
+            box-shadow: 4px 4px 4px rgb(245, 218, 218,.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .image{
+            overflow: hidden;
+            margin: 1rem;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background-image: url('face1.gif');
+            background-size: 90% 85%;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #hands{
+            margin-top: 130%;
+            height: 120px;
+            width: 120px;
+            transition: 1s ease-in-out;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            height: 30px;
+            width: 300px;
+            border-radius: 20px;
+            border:none;
+            color: #5a5449;
+            text-indent: 15px;
+            font-size: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+            outline: none;
+            margin: 0.3rem 0;
+        }
+        .btn{
+            text-indent: 0px;
+            height: 40px;
+            width: 300px;
+            margin-top: 10px;
+            background-color: #1b8c1b66;
+            transition: "2s";
+            border: none;
+            color: white;
+            font-weight: bolder;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+            outline: none;
+        }
+        .btn:hover{
+            color: #5a5449;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            Login Page
+        </nav>
+        <div class="mainContainer">
+            <div class="login">
+                <div class="image">
+                    <img id="hands" src="hands.png"/>
+                </div>
+                <div class="formContainer">
+                    <form>
+                        <input type="text" placeholder="Username" class="username"        autocomplete="off"/>
+                        <input type="password" placeholder="Password" class="password"/>
+                        <input type="submit" value="Login" class="btn"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",()=>{
+        const hands=document.querySelector("#hands");
+        const imageContainer=document.querySelector(".image");
+        const username=document.querySelector(".username");
+        const password=document.querySelector(".password");
+        username.addEventListener("click",()=>{
+            imageContainer.style.backgroundImage="url('face1.gif')";
+            hands.style.marginTop="130%";
+        })
+        password.addEventListener("focus",()=>{
+            imageContainer.style.backgroundImage="url('face2.gif')";
+            hands.style.marginTop="0%";
+        })
+    })
+    </script>
+</body>
+</html>
